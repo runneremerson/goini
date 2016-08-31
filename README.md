@@ -1,15 +1,12 @@
 goini	
-========
-[![Build Status](https://drone.io/github.com/widuu/goini/status.png)](https://drone.io/github.com/widuu/goini/latest)
 
-**[The official website](http://www.widuu.com)**
 ##描述
 
 使用goini更简单的读取go的ini配置文件以及根据特定格式的各种配置文件。
 
 ##安装方法
 
-	gp get github.com/widuu/goini
+	gp get github.com/runneremerson/goini
 
 ##使用方法
 
