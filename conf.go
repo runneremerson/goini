@@ -11,6 +11,7 @@ package goini
 
 import (
 	"bufio"
+	"errors"
 	"fmt"
 	"io"
 	"os"
@@ -23,11 +24,23 @@ type Config struct {
 }
 
 //Create an empty configuration file
-func SetConfig(filepath string) *Config {
+func SetConfig(filepath string) (*Config, error) {
+
+	fileinfo, err := os.Stat(filepath)
+	if err != nil {
+		if os.IsNotExist(err) {
+			return nil, errors.New(filepath + " not exists")
+		}
+	}
+
+	if fileinfo.IsDir() {
+		return nil, errors.New(filepath + " is not a file")
+	}
+
 	c := new(Config)
 	c.filepath = filepath
 
-	return c
+	return c, nil
 }
 
 //To obtain corresponding value of the key values

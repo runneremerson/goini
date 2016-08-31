@@ -5,8 +5,11 @@ import (
 	"testing"
 )
 
-func Test(t *testing.T) {
-	conf := SetConfig("./conf/conf.ini")
+func TestExists(t *testing.T) {
+	conf, err := SetConfig("./conf/conf.ini")
+	if err != nil {
+		t.Errorf("SetConfig err %v", err)
+	}
 	username := conf.GetValue("database", "username")
 	fmt.Println(username) //root
 	conf.DeleteValue("database", "username")
@@ -20,4 +23,11 @@ func Test(t *testing.T) {
 
 	data := conf.ReadList()
 	fmt.Println(data)
+}
+
+func TestNotExists(t *testing.T) {
+	_, err := SetConfig("./conf/not_exists.ini")
+	if err == nil {
+		t.Errorf("configuring file expects not exist")
+	}
 }
