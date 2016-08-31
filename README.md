@@ -6,7 +6,7 @@ goini
 
 ##安装方法
 
-	gp get github.com/runneremerson/goini
+	go get github.com/runneremerson/goini
 
 ##使用方法
 
@@ -64,7 +64,7 @@ goini
 
 ##install 
 
-	gp get github.com/runneremerson/goini
+	go get github.com/runneremerson/goini
 
 ##use example
 
