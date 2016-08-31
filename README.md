@@ -64,7 +64,7 @@ goini
 
 ##install 
 
-	gp get github.com/widuu/goini
+	gp get github.com/runneremerson/goini
 
 ##use example
 
